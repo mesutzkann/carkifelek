@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .subtitle {
@@ -54,29 +55,27 @@
             border: 8px solid #fff;
             position: relative;
             transition: transform 4s cubic-bezier(0.23, 1, 0.32, 1);
-            background: conic-gradient(
-                #FF6B6B 0deg 18deg,
-                #4ECDC4 18deg 36deg,
-                #45B7D1 36deg 54deg,
-                #96CEB4 54deg 72deg,
-                #FECA57 72deg 90deg,
-                #FF9FF3 90deg 108deg,
-                #54A0FF 108deg 126deg,
-                #5F27CD 126deg 144deg,
-                #00D2D3 144deg 162deg,
-                #FF9F43 162deg 180deg,
-                #EE5A24 180deg 198deg,
-                #0984E3 198deg 216deg,
-                #6C5CE7 216deg 234deg,
-                #A29BFE 234deg 252deg,
-                #FD79A8 252deg 270deg,
-                #FDCB6E 270deg 288deg,
-                #E17055 288deg 306deg,
-                #81ECEC 306deg 324deg,
-                #74B9FF 324deg 342deg,
-                #A29BFE 342deg 360deg
-            );
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: conic-gradient(#FF6B6B 0deg 18deg,
+                    #4ECDC4 18deg 36deg,
+                    #45B7D1 36deg 54deg,
+                    #96CEB4 54deg 72deg,
+                    #FECA57 72deg 90deg,
+                    #FF9FF3 90deg 108deg,
+                    #54A0FF 108deg 126deg,
+                    #5F27CD 126deg 144deg,
+                    #00D2D3 144deg 162deg,
+                    #FF9F43 162deg 180deg,
+                    #EE5A24 180deg 198deg,
+                    #0984E3 198deg 216deg,
+                    #6C5CE7 216deg 234deg,
+                    #A29BFE 234deg 252deg,
+                    #FD79A8 252deg 270deg,
+                    #FDCB6E 270deg 288deg,
+                    #E17055 288deg 306deg,
+                    #81ECEC 306deg 324deg,
+                    #74B9FF 324deg 342deg,
+                    #A29BFE 342deg 360deg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .wheel::before {
@@ -85,11 +84,9 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: repeating-conic-gradient(
-                from 0deg,
-                transparent 0deg 17deg,
-                rgba(255,255,255,0.2) 17deg 18deg
-            );
+            background: repeating-conic-gradient(from 0deg,
+                    transparent 0deg 17deg,
+                    rgba(255, 255, 255, 0.2) 17deg 18deg);
         }
 
         .wheel-number {
@@ -97,7 +94,7 @@
             font-weight: bold;
             font-size: 18px;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
             transform-origin: center;
             display: flex;
             align-items: center;
@@ -105,7 +102,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(5px);
         }
 
@@ -120,7 +117,7 @@
             border-right: 15px solid transparent;
             border-top: 30px solid #FFD700;
             z-index: 10;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
         .center-circle {
@@ -139,7 +136,7 @@
             font-weight: bold;
             color: #333;
             z-index: 5;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .spin-button {
@@ -185,7 +182,7 @@
         .result-text {
             font-size: 1.5rem;
             font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .confetti {
@@ -201,6 +198,7 @@
                 transform: translateY(-100vh) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(100vh) rotate(720deg);
                 opacity: 0;
@@ -238,11 +236,11 @@
                 width: 300px;
                 height: 300px;
             }
-            
+
             h1 {
                 font-size: 2rem;
             }
-            
+
             .wheel-number {
                 font-size: 14px;
                 width: 25px;
@@ -251,26 +249,27 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>🎯 WebEx FreeSession Çarkı</h1>
         <p class="subtitle">Toplantı odasını çarkla belirle!</p>
-        
+
         <div class="wheel-container">
             <div class="pointer"></div>
             <div class="wheel" id="wheel">
                 <div class="center-circle">ÇARK</div>
             </div>
         </div>
-        
+
         <button class="spin-button" id="spinButton" onclick="spinWheel()">
             🎰 Çarkı Çevir!
         </button>
-        
+
         <div class="result" id="result">
             <div class="result-text">Çarkı çevirin ve odanızı öğrenin! 🎲</div>
         </div>
-        
+
         <div class="session-list" id="sessionList">
             <!-- Session odaları burada gösterilecek -->
         </div>
@@ -282,6 +281,20 @@
             sessions.push(`FreeSession${i}`);
         }
 
+        // Şaka mesajları
+        const jokes = [
+            "Bugün çok çalıştın, hala toplantı mı yapacaksın? 😅",
+            "Çarkı çeviriyorsun ama kahveni unutma! ☕",
+            "Toplantı odası seçmek hiç bu kadar eğlenceli olmamıştı!",
+            "Şansın bol olsun, belki de en iyi oda seni bekliyor!",
+            "Çark döner, işler biter... Ama toplantılar bitmez!",
+            "Bir toplantı daha, bir başarı daha! 🚀",
+            "Çarkı çevir, kaderini seç! (Ama mola vermeyi unutma)",
+            "Bugün şanslı günündesin gibi hissediyorum!",
+            "Toplantıdan sonra tatlı bir mola iyi giderdi, ne dersin?",
+
+        ];
+
         let isSpinning = false;
         let selectedSession = null;
 
@@ -289,25 +302,25 @@
         function setupWheel() {
             const wheel = document.getElementById('wheel');
             const angleStep = 360 / 20; // 20 oda için 18 derece
-            
+
             for (let i = 0; i < 20; i++) {
                 const number = document.createElement('div');
                 number.className = 'wheel-number';
                 number.textContent = i + 1;
-                
+
                 // Her bölümün TAM ORTASINA yerleştir
                 const angle = i * angleStep + (angleStep / 2); // Bölümün ortasına konumlandır
                 const radius = 140; // Çarkın yarıçapından optimal mesafe
-                
+
                 // Koordinat hesaplama (0 derece üstte başlasın)
                 const radian = (angle - 90) * Math.PI / 180;
                 const x = Math.cos(radian) * radius;
                 const y = Math.sin(radian) * radius;
-                
+
                 number.style.left = `calc(50% + ${x}px)`;
                 number.style.top = `calc(50% + ${y}px)`;
                 number.style.transform = 'translate(-50%, -50%)';
-                
+
                 wheel.appendChild(number);
             }
         }
@@ -327,47 +340,58 @@
         // Çarkı çevir
         function spinWheel() {
             if (isSpinning) return;
-            
+
             isSpinning = true;
             const spinButton = document.getElementById('spinButton');
             const wheel = document.getElementById('wheel');
             const result = document.getElementById('result');
-            
+
             spinButton.disabled = true;
             spinButton.textContent = '🌀 Çark Dönüyor...';
-            
+
             // Seçilen session'ı temizle
             if (selectedSession !== null) {
                 document.getElementById(`session-${selectedSession}`).classList.remove('selected');
             }
-            
+
+            // Çark dönerken rastgele bir şaka göster
+            const randomJokeSpin = jokes[Math.floor(Math.random() * jokes.length)];
+            result.innerHTML = `
+                <div class="result-text">
+                    ${randomJokeSpin}
+                </div>
+            `;
+
             // Rastgele dönüş açısı (3-5 tam tur + rastgele açı)
             const randomSpins = 3 + Math.random() * 2; // 3-5 tur
             const randomAngle = Math.random() * 360; // 0-360 derece
             const totalRotation = randomSpins * 360 + randomAngle;
-            
+
             wheel.style.transform = `rotate(${totalRotation}deg)`;
-            
+
             // Hangi session'ın seçildiğini hesapla
             const normalizedAngle = (360 - (totalRotation % 360)) % 360;
             const sessionIndex = Math.floor(normalizedAngle / (360 / 20));
             selectedSession = sessionIndex;
-            
+
             // 4 saniye sonra sonucu göster
             setTimeout(() => {
                 const selectedSessionName = sessions[sessionIndex];
+                // Sonuçta da rastgele bir şaka göster
+                const randomJokeResult = jokes[Math.floor(Math.random() * jokes.length)];
                 result.innerHTML = `
                     <div class="result-text">
-                        🎉 Seçilen Oda: <strong>${selectedSessionName}</strong> 🎉
+                        🎉 Seçilen Oda: <strong>${selectedSessionName}</strong> 🎉<br>
+                        <span style="font-size:1rem;opacity:0.8;">${randomJokeResult}</span>
                     </div>
                 `;
-                
+
                 // Seçilen session'ı vurgula
                 document.getElementById(`session-${sessionIndex}`).classList.add('selected');
-                
+
                 // Konfeti efekti
                 createConfetti();
-                
+
                 isSpinning = false;
                 spinButton.disabled = false;
                 spinButton.textContent = '🎰 Tekrar Çevir!';
@@ -377,7 +401,7 @@
         // Konfeti efekti
         function createConfetti() {
             const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FECA57'];
-            
+
             for (let i = 0; i < 50; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
@@ -386,7 +410,7 @@
                     confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
                     confetti.style.animationDelay = Math.random() * 2 + 's';
                     document.body.appendChild(confetti);
-                    
+
                     setTimeout(() => {
                         confetti.remove();
                     }, 3000);
@@ -395,13 +419,13 @@
         }
 
         // Sayfa yüklendiğinde çarkı hazırla
-        window.onload = function() {
+        window.onload = function () {
             setupWheel();
             setupSessionList();
         };
 
         // Keyboard shortcuts
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.code === 'Space' && !isSpinning) {
                 event.preventDefault();
                 spinWheel();
@@ -409,4 +433,5 @@
         });
     </script>
 </body>
-</html> 
+
+</html>
